@@ -1,0 +1,15 @@
+CREATE TABLE `t_dpt_1167279666781773_50577_3525_1` (
+  `url_crc` STRING '数据url的语义指纹,关联数据表的url_crc',
+  `add_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '数据标引入库时间',
+  `download_date` datetime DEFAULT NULL COMMENT '数据下载时间',
+  `source_type` tinyint(4) NOT NULL DEFAULT '4' COMMENT '资源类型',
+  `type` STRING NOT NULL DEFAULT '' COMMENT '数据类型：m-主贴 q-转发 c-评论	新增',
+  `attitudes_count` bigint(20) DEFAULT NULL COMMENT '点赞数',
+  `click_count` bigint(20) DEFAULT '0' COMMENT '点击数',
+  `comments_count` bigint(20) NOT NULL DEFAULT '0' COMMENT '回复数',
+  `quote_count` bigint(20) DEFAULT '0' COMMENT '转发数',
+  `scores_comment` STRING DEFAULT NULL COMMENT '评分',
+  `attitudes_count_no` STRING DEFAULT NULL COMMENT '点踩数',
+  PRIMARY KEY (`url_crc`),
+  KEY `url_crc` (`url_crc`) USING BTREE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
